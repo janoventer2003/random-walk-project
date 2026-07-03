@@ -44,7 +44,7 @@ def plot_1D_random_walks(positions = [], names=[]):
         #plt.scatter(0, positions[i][0], color="green", s=100, label="Start (0)", zorder=5)
         #plt.scatter(len(positions[i]), positions[i][-1], color="red", s=100, label=f"End ({positions[i][-1]})", zorder=5)
 
-    plt.title("1D Random Walk Simulation", fontsize=14)
+    plt.title("1D Random Walk Simulation\s", fontsize=14)
     plt.xlabel("Number of Steps (Time)", fontsize=12)
     plt.ylabel("Position", fontsize=12)
     plt.grid(True, linestyle="--", alpha=0.6)

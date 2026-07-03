@@ -21,7 +21,7 @@ def generate_1D_random_walk(steps, choices = [], probs = []):
 
     return walk, positions
 
-def generate_1D_random_walks(num_walks, steps = [], choices = [], probs = []):
+def generate_1D_random_walks(num_walks, steps = [], choices = [[]], probs = [[]]):
     all_walks = []
     all_positions = []
 
@@ -32,12 +32,15 @@ def generate_1D_random_walks(num_walks, steps = [], choices = [], probs = []):
 
     return all_walks, all_positions
 
-def plot_1D_random_walks(positions = []):
+def plot_1D_random_walks(positions = [], names=[]):
     plt.figure(figsize=(10, 5))
 
     for i in range(len(positions)):
-        plt.plot(positions[i], label=f"Random Walk {i+1}", linewidth=1)
-
+        if names:
+            plt.plot(positions[i], label=f"{names[i]}", linewidth=1)
+        else:
+            plt.plot(positions[i], label=f"Random Walk {i+1}", linewidth=1)
+ 
         #plt.scatter(0, positions[i][0], color="green", s=100, label="Start (0)", zorder=5)
         #plt.scatter(len(positions[i]), positions[i][-1], color="red", s=100, label=f"End ({positions[i][-1]})", zorder=5)
 
@@ -49,8 +52,8 @@ def plot_1D_random_walks(positions = []):
 
     plt.show()
 
-_, positions_1 = generate_1D_random_walk(steps=100, choices=[-1, 1], probs=[0.5, 0.5])
-_, positions_2 = generate_1D_random_walk(steps=100, choices=[-1, 1], probs=[0.5, 0.5])
-_, positions_3 = generate_1D_random_walk(steps=100, choices=[-1, 1], probs=[0.5, 0.5])
+# _, positions_1 = generate_1D_random_walk(steps=100, choices=[-1, 1], probs=[0.5, 0.5])
+# _, positions_2 = generate_1D_random_walk(steps=100, choices=[-1, 1], probs=[0.5, 0.5])
+# _, positions_3 = generate_1D_random_walk(steps=100, choices=[-1, 1], probs=[0.5, 0.5])
 
-plot_1D_random_walks(positions=[positions_1, positions_2, positions_3])  
+# plot_1D_random_walks(positions=[positions_1, positions_2, positions_3])  
